@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <title>Interactive card details form</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <aside class="card">
+    <img src="bg-card-front.png" class="front" alt="">
+    <span class="circle"></span>
+    <span class="small"></span>
+    <h3>0000 0000 0000 0000</h3>
+    <div class="bottom">
+      <p>Abel Ezekiel<span class="shift"> 00/00</span></p>
+    </div>
+  </aside>
+  <aside class="card">
+    <img src="bg-card-back.png" class="back" alt="">
+    <h6>000</h6>
+  </aside>
+  <main class="container" id="container">
+    <form class="form" action="" method="post">
+      <label for="name">CARDHOLDER NAME</label><br>
+      <input id="name" type="text" placeholder="e.g. Jane Appleseed" required><br>
+      <p class="nameError">can't be blank</p>
+      <label for="number">CARD NUMBER</label><br>
+      <input id="number" type="text" placeholder="e.g. 1234 5678 9123 0000" required><br>
+      <p class="numberError">wrong format, numbers only</p>
+      <label for="date" class="date">EXP. DATE (MM/YY)</label><span class="cvc"><label>CVC</label></span><br>
+      <input id="month" type="text" maxlength="2" placeholder="MM" style="width:60px" required><input id="year" type="text" maxlength="2" placeholder="YY" style="width:60px" required> <input id="cvc" type="text" maxlength="3" placeholder="e.g. 123" style="width: 155px;"><br>
+      <div class="errors">
+      <span class="dateError">can't be blank</span>
+      <span class="cvcError">can't be blank</span>
+      </div>
+      <input type="button" onclick="myFunction()" value="Confirm" class="confirm-btn">
+    </form> 
+  </main>
+  
+  <div class="confirmed" id="confirmed">
+    <center>
+    <img src="icon-complete.svg" alt="">
+    <br><br>
+    <h1>Thank you!</h1>
+    <br>
+    <p>We've added your card details</p>
+    <br>
+    </center>
+    <input type="button" value="Continue" class="continue-btn">
+  </div>
+</body>
+</html>
